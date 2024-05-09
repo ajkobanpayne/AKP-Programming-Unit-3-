@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- This is my web based delay synth that uses MIDI input. It is a simple synthesizer that uses
+    basic waveforms. First, select the MIDI input that will be used, then select the waveform type 
+and delay parameters. the input Level controls the volume of the signal before the delay, and the volume
+controls the level of the delayed signal.  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Midi Delay Synth</title>
+    <script src="https://cdn.jsdelivr.net/npm/webmidi@latest/dist/iife/webmidi.iife.js"></script>
+    <script src="script.js" type="module"></script>
+</head>
+<body>
+<h1>Midi Delay Synth</h1>
+<h2>Andrew Koban Payne</h2>
+<button id="startAudio">Start Audio</button>
+
+<div 1>
+    <h2>MIDI Input</h2>
+    <label for="dropIns">Select a MIDI Input: </label>
+    <select id="dropIns"></select>
+</div>
+
+<div 2>
+    <h2>Input Level</h2>
+<input id="inputGain" type="range" min="-70" max="6" value="0.1" step="0.1">
+<label id="inputDisplay" for="vol">0.0 dBFS</label>
+
+    <h2>Waveform</h2>
+<form>
+<input id="sine" type="radio" value="0" name="waveforms">
+<label for="sine">Sine</label>
+
+<input id="saw" type="radio" value="1" name="waveforms">
+<label for="saw">Saw</label>
+
+<input id="square" type="radio" value="2" name="waveforms">
+<label for="square">Square</label>
+
+<input id="triangle" type="radio" value="3" name="waveforms">
+<label for="triangle">Triangle</label>
+</form>
+
+</div>
+
+<div 3>
+    <h2> Delay Controls</h2>
+        <!-- <input id="delay" type="checkbox">
+        <label for="delay">Delay</label> -->
+
+        <input id="delayTime" type="range" min="0" max="5" value="0.50" step="0.05">
+        <label id="delayTimeDisplay" for="delayTime">0.50 sec</label>
+
+        <input id="feedback" type="range" min="0" max="1" value="0.25" step="0.01">
+        <label id="feedbackDisplay" for="fb">25%</label>
+</div>
+
+<div 4>
+    <h2>Volume</h2>
+<input id="vol" type="range" min="-70" max="6" value="0.1" step="0.1">
+<label id="volDisplay" for="vol">0.0 dBFS</label>
+</div>
+
+</body>
+</html>
